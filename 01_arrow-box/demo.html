@@ -1,0 +1,149 @@
+<html>
+<head>
+  <title>poupup window</title>
+  <style type="text/css">
+    body,
+    div,
+    p,
+    h6,
+    span {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .arrow-box {
+      position: relative;
+      display: inline-block;
+      height: 60px;
+      border: 1px solid #697a85;
+      background: #dbdbdb;
+      opacity: 0.6;
+      border-radius: 5px;
+      font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+      -webkit-box-shadow: 0px 2px 4px #000000;
+      -moz-box-shadow: 0px 2px 4px #000000;
+      box-shadow: 0px 2px 4px #000000;
+    }
+    
+    .arrow-box:after,
+    .arrow-box:before {
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+    
+    .arrow-box:after {
+      border-color: rgba(136, 183, 213, 0);
+      border-top-color: rgba(219, 219, 219, 0.6);
+      border-width: 15px;
+      margin-left: -15px;
+    }
+    
+    .arrow-box:before {
+      border-color: rgba(105, 122, 133, 0);
+      border-top-color: rgba(219, 219, 219, 0.6);
+      border-width: 16px;
+      margin-left: -16px;
+    }
+    
+    .arrow-box .arrow-box-area {
+      min-width: 100px;
+      height: 60px;
+      /* OLD – iOS 6-, Safari 3.1-6 */
+      display: -webkit-box;
+      /* OLD – Firefox 19- (buggy but mostly works) */
+      display: -moz-box;
+      /* TWEENER – IE 10 */
+      display: -ms-flexbox;
+      /* NEW – Chrome */
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .arrow-box .arrow-box-logo {
+      width: 50px;
+      height: 40px;
+      margin: 0 8px;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      background: url(./logo.jpg) no-repeat center;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    
+    .arrow-box .arrow-box-button {
+      width: 35px;
+      height: 35px;
+      margin: 0 5px;
+      background: url('data:image/png;base64,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') no-repeat center;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    
+    .arrow-box .arrow-box-content {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      height: 60px;
+       /* OLD – iOS 6-, Safari 3.1-6 */
+      display: -webkit-box;
+      /* OLD – Firefox 19- (buggy but mostly works) */
+      display: -moz-box;
+      /* TWEENER – IE 10 */
+      display: -ms-flexbox;
+      /* NEW – Chrome */
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .arrow-box .arrow-box-title {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      font-size: 18px;
+      padding: 5px 0 0;
+      margin: 0;
+    }
+    
+    .arrow-box .arrow-box-text {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      font-size: 14px;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body style="padding:0; margin:0; height:100%; background:url(./bg.jpg) no-repeat center; -webkit-background-size:cover;  background-size:cover">
+  <div style="width:1000px; margin: 0 auto; padding-top: 30px;">
+
+    <!--text box-->
+    <div class="arrow-box">
+      <div class="arrow-box-area">
+        <div class="arrow-box-logo"></div>
+        <div class="arrow-box-content">
+          <h6 class="arrow-box-title">Current Location</h6>
+          <p class="arrow-box-text">GuangZhou, GuangDong China</p>
+        </div>
+        <div class="arrow-box-button"></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
