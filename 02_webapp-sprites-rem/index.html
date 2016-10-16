@@ -174,21 +174,28 @@
 		</div>
 	</div>
 
-	<script>
-		(function () {
-			document.addEventListener('DOMContentLoaded', function () {
+	<script type="text/javascript">
+		//设计稿的宽度
+		var originWidth = 640;
+
+		(function (window, originWidth) {
+			function _getBodyFontSize() {
+
 				var html = document.documentElement;
 				var windowWidth = html.clientWidth;
-				console.log('windowWidth: ' + windowWidth);
+				
 				/* 
 				 * font-size的取值通过js计算，取当前viewport的deviceWidth与设计稿的宽的比例值
-				 * 这个6.4就是根据设计稿的横向宽度640px来确定的, 因为得出的font-size太小，不方便计算，且有的浏览器可能不兼容太小字号，所以将font-size放大100倍
+				 * 因为得出的font-size太小，不方便计算，且有的浏览器可能不兼容太小字号，所以将font-size放大100倍
 				 * 等价于html.style.fontSize = windowWidth / 640 * 100 + 'px'
 				 */ 
-				html.style.fontSize = windowWidth / 6.4 + 'px';
-				
-			}, false);
-		})();
+				var fontSize = windowWidth / (originWidth / 100);
+				html.style.fontSize = fontSize.toFixed() + 'px';
+			}
+			
+			document.addEventListener('DOMContentLoaded', _getBodyFontSize, false);
+			document.addEventListener('resize', _getBodyFontSize, false);
+		})(window, originWidth);
 	</script>
 </body>
 </html>
