@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>display:table</title>
+    <style type="text/css">
+        html,
+        body {
+            font-family: Helvetica Neue, Hiragino Sans GB, Microsoft YaHei, \\9ED1\4F53, Arial, sans-serif;
+        }
+        
+        .container {
+            width: 800px;
+            display: inline-block;
+            margin: 20px auto;
+        }
+        /*table style*/
+        
+        .zinn-table {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            max-width: 100%;
+            color: #727171;
+        }
+        
+        .zinn-table .table-row {
+            display: table-row;
+        }
+        
+        .zinn-table .table-row .table-row-cell {
+            display: table-cell;
+            min-width: 10px;
+            white-space: nowrap;
+            word-break: break-all;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-bottom: 1px solid #f1f1f1;
+            padding: 6px;
+        }
+        
+        .zinn-table.zinn-links .table-row {
+            cursor: pointer;
+        }
+        
+        .zinn-table.zinn-links .table-row:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="zinn-table zinn-links">
+            <dl class="table-row">
+                <dd class="table-row-cell" title="React Native">React Native</dd>
+                <dd class="table-row-cell">React Native lets you build mobile apps using only JavaScript.</dd>
+                <dd class="table-row-cell">It uses the same design as React, letting you compose a rich mobile UI from declarative components.</dd>
+            </dl>
+            <dl class="table-row">
+                <dd class="table-row-cell" title="A React Native App is a Real Mobile App">A React Native App is a Real Mobile App</dd>
+                <dd class="table-row-cell">With React Native, you don't build a “mobile web app”, an “HTML5 app”, or a “hybrid app”. </dd>
+                <dd class="table-row-cell">You just put those building blocks together using JavaScript and React.</dd>
+            </dl>
+            <dl class="table-row">
+                <dd class="table-row-cell" title="Don't Waste Time Recompiling">Don't Waste Time Recompiling</dd>
+                <dd class="table-row-cell">React Native lets you build your app faster.</dd>
+                <dd class="table-row-cell">With hot reloading, you can even run new code while retaining your application state.</dd>
+            </dl>
+            <dl class="table-row">
+                <dd class="table-row-cell" title="Use Native Code When You Need To">Use Native Code When You Need To</dd>
+                <dd class="table-row-cell">React Native combines smoothly with components written in Objective-C, Java, or Swift. </dd>
+                <dd class="table-row-cell">It's simple to drop down to native code if you need to optimize a few aspects of your application.</dd>
+            </dl>
+            <dl class="table-row">
+                <dd class="table-row-cell" title="React Native">React Native</dd>
+                <dd class="table-row-cell">React Native lets you build mobile apps using only JavaScript.</dd>
+                <dd class="table-row-cell">It uses the same design as React, letting you compose a rich mobile UI from declarative components.</dd>
+            </dl>
+            <dl class="table-row">
+                <dd class="table-row-cell" title="A React Native App is a Real Mobile App">A React Native App is a Real Mobile App</dd>
+                <dd class="table-row-cell">With React Native, you don't build a “mobile web app”, an “HTML5 app”, or a “hybrid app”. </dd>
+                <dd class="table-row-cell">You just put those building blocks together using JavaScript and React.</dd>
+            </dl>
+            <dl class="table-row">
+                <dd class="table-row-cell" title="Don't Waste Time Recompiling">Don't Waste Time Recompiling</dd>
+                <dd class="table-row-cell">React Native lets you build your app faster.</dd>
+                <dd class="table-row-cell">With hot reloading, you can even run new code while retaining your application state.</dd>
+            </dl>
+            <dl class="table-row">
+                <dd class="table-row-cell" title="Use Native Code When You Need To">Use Native Code When You Need To</dd>
+                <dd class="table-row-cell">React Native combines smoothly with components written in Objective-C, Java, or Swift. </dd>
+                <dd class="table-row-cell">It's simple to drop down to native code if you need to optimize a few aspects of your application.</dd>
+            </dl>
+        </div>
+    </div>
+</body>
+
+</html>
