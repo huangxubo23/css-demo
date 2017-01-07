@@ -1,0 +1,47 @@
+html, body, div, p, span {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #f1f1f1;
+}
+
+/*
+ * Flex布局兼容写法
+ */
+
+ .box{
+     /* 
+      * --定义容器的display属性-- 
+      * 由于旧版语法并没有列入W3C标准，所以这里不用写 display:box
+      */
+     display: -webkit-box;    /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+     display: -moz-box;       /* 老版本语法: Firefox (buggy) */
+     display: -ms-flexbox;    /* 混合版本语法: IE 10 */
+     display: -webkit-flex;   /* 新版本语法: Chrome 21+ */
+     display: flex;           /* 新版本语法: Opera 12.1, Firefox 22+ */
+     /*
+      * --子元素主轴对齐方式--
+      */
+     -webkit-box-pack: center;         /* 旧版语法主轴对齐有4个参数, box-pack: start-左对齐（默认） | end-右对齐 | center-居中对齐 | justify-左右对齐; */
+     -moz-justify-content: center;
+     -webkit-justify-content: center;
+     justify-content: center;          /* 新版语法主轴对齐方式有5个参数, justify-content: flex-start-左对齐（默认） | flex-end-右对齐 | center-居中对齐 | space-between-两端对齐 | space-around-平均分布; */
+     /*
+      * --子元素交叉轴对齐方式--
+      */
+     -webkit-box-align: center;        /* 交叉轴对齐：box-align: start-顶部对齐（默认） | end-底部对齐 | center-居中对齐 | baseline-文本基线对齐 | stretch-上下对齐并铺满; */
+     -moz-align-items: center;
+     -webkit-align-items: center;
+     align-items: center;              /* 交叉轴对齐方式：align-items: flex-start-顶部对齐（默认） | flex-end-底部对齐 | center-居中对齐 | baseline-文本基线对齐 | stretch-上下对齐并铺满; */
+     /*
+      * --子元素的显示方向--
+      */
+     /*-webkit-box-pack: end;*/        /* box-direction只是改变了子元素的排序，并没有改变对齐方式，在右到左，下到上对齐时需要新增一个box-pack来改变对齐方式：box-pack：end; */
+     -webkit-box-direction: normal;
+     -webkit-box-orient: horizontal;
+     -moz-flex-direction: row;
+     -webkit-flex-direction: row;
+     flex-direction: row;
+ }
